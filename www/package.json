@@ -1,0 +1,14 @@
+{
+  "name": "WebWalc",
+  "version": "0.1.0",
+  "description": "Web calculator using WASM",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx http-server"
+  },
+  "author": "Will Morris",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
