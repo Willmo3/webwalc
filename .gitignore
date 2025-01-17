@@ -10,3 +10,6 @@ wasm-pack.log
 www/pkg/
 www/node_modules/
 www/package-lock.json
+
+## Ignore the interpreter -- this is pulled in thru a separate git repo.
+www/interp
