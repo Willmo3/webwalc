@@ -6,9 +6,10 @@
   </head>
   <body>
     <script type="module">
+      import { lex } from './pkg/webwalc.ts/lexer.js';
       import init, { greet } from './pkg/webwalc.js';
       init().then(() => {
-        greet("WebAssembly");
+         greet(JSON.stringify(lex("3 + 3")));
       });
     </script>
   </body>

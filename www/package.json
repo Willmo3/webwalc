@@ -9,7 +9,8 @@
   "author": "Will Morris",
   "license": "MIT",
   "dependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "webwalc.ts": "^1.0.0"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1"
