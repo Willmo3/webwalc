@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+git clone https://github.com/Willmo3/webwalc.ts
+
+cd webwalc.ts && git pull
