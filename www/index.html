@@ -8,12 +8,12 @@
     <script type="module">
       import { lex } from './pkg/webwalc.ts/lexer.js';
       import { parse } from './pkg/webwalc.ts/parser.js';
-      import { webwalcJsonVisitor } from './pkg/webwalc.ts/webwalcJsonVisitor.js';
+      import { WebwalcJsonVisitor } from './pkg/webwalc.ts/webwalcJsonVisitor.js';
       import { postTraverseAST } from './pkg/webwalc.ts/ast.js';
       import init, { calc } from './pkg/webwalc.js';
       init().then(() => {
          const tree = parse(lex("3 + 3"));
-         const visitor = new webwalcJsonVisitor();
+         const visitor = new WebwalcJsonVisitor();
          postTraverseAST(tree, visitor);
          calc(visitor.result());
       });
