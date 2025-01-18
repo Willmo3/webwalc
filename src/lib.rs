@@ -14,8 +14,8 @@ pub fn greet(name: &str) {
 }
 
 #[wasm_bindgen]
-/// Given a tree in JSON format.
+/// Given a tree in JSON format, evaluate it and alert the console.
 pub fn calc(tree: &str) {
-    let ast: Token = serde_json::from_str(tree).unwrap();
-    greet(&format!("{:?}", ast.evaluate()));
+    let val = serde_json::from_str::<Token>(tree).unwrap().evaluate();
+    alert(&format!("Tree: {:?}", val));
 }
