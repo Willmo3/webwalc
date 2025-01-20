@@ -3,8 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <title>WalcWeb</title>
+    <style media="screen">
+      #editor {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    </style>
   </head>
   <body>
+<!--  Early testing work -->
     <script type="module">
       import { lex } from './lib/webwalc.ts/lexer.js';
       import { parse } from './lib/webwalc.ts/parser.js';
@@ -17,6 +27,14 @@
          postTraverseAST(tree, visitor);
          calc(visitor.result());
       });
+    </script>
+<!-- Web editing environment -->
+    <div id="editor"></div>
+    <script src="./lib/ace-builds/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      const editor = ace.edit("editor");
+      editor.setTheme("ace/theme/monokai");
+      editor.session.setMode("ace/mode/none");
     </script>
   </body>
 </html>
