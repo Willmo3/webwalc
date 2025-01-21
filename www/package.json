@@ -4,6 +4,7 @@
   "description": "Web calculator using WASM",
   "main": "index.js",
   "scripts": {
+    "setup": "cd tailwind && npx tailwind -i config.css -o ../style/tailwind.css",
     "dev": "npx http-server"
   },
   "author": "Will Morris",
