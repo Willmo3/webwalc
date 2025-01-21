@@ -25,7 +25,7 @@
          const tree = parse(lex("3 + 3"));
          const visitor = new WebwalcJsonVisitor();
          postTraverseAST(tree, visitor);
-         calc(visitor.result());
+         console.log(calc(visitor.result()));
       });
     </script>
 <!-- Web editing environment -->
