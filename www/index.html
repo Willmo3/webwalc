@@ -12,12 +12,12 @@
         left: 0;
       }
     </style>
+    <script src='./scripts/listeners.js' type="module" charset="utf-8"></script>
+    <script src="./lib/ace-builds/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
   </head>
   <body>
-  <script src='./scripts/listeners.js' type="module" charset="utf-8"></script>
 <!-- Web editing environment -->
     <div id="editor"></div>
-    <script src="./lib/ace-builds/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
     <script>
       const editor = ace.edit("editor");
       editor.setTheme("ace/theme/monokai");
