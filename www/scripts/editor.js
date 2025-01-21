@@ -8,7 +8,17 @@ import init, { calc } from '../pkg/webwalc.js';
 
 // Ensure WebAssembly initialization complete before continuing.
 await init();
-const editor = ace.edit('editor');
+
+// Initialize Ace Editor
+const editor = ace.edit("editor");
+editor.setTheme("ace/theme/monokai");
+
+// Additional options
+editor.setOptions({
+    fontSize: "14px",
+    showPrintMargin: true,
+    wrap: true,
+});
 
 document.getElementById('submitButton').addEventListener('click', () => {
     // Assuming 'editor' is your instance of Ace editor
