@@ -1,9 +1,9 @@
 // Listeners for
 
-import { lex } from '../lib/webwalc.ts/lexer.js';
-import { parse } from '../lib/webwalc.ts/parser.js';
-import { WebwalcJsonVisitor } from '../lib/webwalc.ts/webwalcJsonVisitor.js';
-import { postTraverseAST } from '../lib/webwalc.ts/ast.js';
+import { lex } from '../lib/webwalc.ts/src/frontend/lexer.js';
+import { parse } from '../lib/webwalc.ts/src/frontend/parser.js';
+import { WebwalcJsonVisitor } from '../lib/webwalc.ts/src/ast/webwalcJsonVisitor.js';
+import { postTraverseAST } from '../lib/webwalc.ts/src/ast/ast.js';
 import init, { calc } from '../pkg/webwalc.js';
 
 // Ensure WebAssembly initialization complete before continuing.
