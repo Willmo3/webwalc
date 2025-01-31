@@ -1,5 +1,3 @@
-// Listeners for
-
 import { lex } from '../lib/webwalc.ts/src/frontend/lexer.js';
 import { parse } from '../lib/webwalc.ts/src/frontend/parser.js';
 import { WebwalcJsonVisitor } from '../lib/webwalc.ts/src/ast/webwalcJsonVisitor.js';
@@ -21,7 +19,6 @@ editor.setOptions({
 });
 
 document.getElementById('submitButton').addEventListener('click', () => {
-    // Assuming 'editor' is your instance of Ace editor
     const input = editor.getValue();
 
     const tree = parse(lex(input));
