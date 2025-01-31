@@ -24,5 +24,17 @@ document.getElementById('submitButton').addEventListener('click', () => {
     const tree = parse(lex(input));
     const visitor = new WebwalcJsonVisitor();
     postTraverseAST(tree, visitor);
-    document.getElementById('outputBox').innerText = calc(visitor.result());
+
+    const output = calc(visitor.result());
+    // Returning result across WebAssembly, so indicating error or OK by first character.
+    if (output[0] === "E") {
+        document.getElementById('outputBox').style.color = 'red';
+        document.getElementById('outputBox').innerText = output.slice(1);
+    } else if (output[0] === "O") {
+        document.getElementById('outputBox').style.color = 'black';
+        document.getElementById('outputBox').innerText = output.slice(1);
+    } else {
+        document.getElementById('outputBox').style.color = 'red';
+        document.getElementById('outputBox').innerText = 'API Error.'
+    }
 });
