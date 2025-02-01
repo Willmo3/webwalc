@@ -21,7 +21,21 @@ editor.setOptions({
 document.getElementById('submitButton').addEventListener('click', () => {
     const input = editor.getValue();
 
-    const tree = parse(lex(input));
+    // Error checking from frontend follows looser API.
+    const lexemes = lex(input);
+    if (lexemes.hasOwnProperty("errorMessage")) {
+        document.getElementById('outputBox').style.color = 'red';
+        document.getElementById('outputBox').innerText = lexemes.errorMessage;
+        return;
+    }
+
+    const tree = parse(lexemes);
+    if (tree.hasOwnProperty("errorMessage")) {
+        document.getElementById('outputBox').style.color = 'red';
+        document.getElementById('outputBox').innerText = tree.errorMessage;
+        return;
+    }
+
     const visitor = new WebwalcJsonVisitor();
     postTraverseAST(tree, visitor);
 

@@ -16,7 +16,15 @@ pub fn greet(name: &str) {
 
 #[wasm_bindgen]
 /// Given a tree in JSON format, evaluate it and return a string representation of the result.
+/// First character will be E or O, representing Error or OK.
 pub fn calc(tree: &str) -> String {
-    let val = interpret(&serde_json::from_str::<Token>(tree).unwrap()).unwrap();
-    format!("{:?}", val)
+    let translation = serde_json::from_str::<Token>(tree);
+    let ast = match translation {
+        Ok(ast) => ast,
+        Err(message) => return format!("E{:?}", message.to_string()),
+    };
+    match interpret(&ast) {
+        Ok(result) => format!("O{:?}", result),
+        Err(message) => format!("E{:?}", message),
+    }
 }
