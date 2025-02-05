@@ -3,14 +3,13 @@
 destination="/var/www/html/webwalc"
 
 # Prepare frontend.
-cd www/lib && ./update && cd webwalc.ts && npm install && npm run build && cd ../../..
+cd www/lib && ./update
 
 # Port files
 sudo cp -r www $destination
 
 # Cleanup 
 remove_from_base="node_modules package.json package-lock.json tailwind lib/update pkg/README.md pkg/package.json"
-remove_from_webwalcts="lib/webwalc.ts/*.json lib/webwalc.ts/node_modules lib/webwalc.ts/index.ts lib/webwalc.ts/index.js"
 remove_from_ace="lib/ace-builds/*.md lib/ace-builds/*html lib/ace-builds/*.json lib/ace-builds/LICENSE lib/ace-builds/ChangeLog.txt lib/ace-builds/demo lib/ace-builds/src lib/ace-builds/src-min-noconflict lib/ace-builds/src-noconflict"
 
-cd $destination && sudo rm -r $remove_from_base $remove_from_webwalcts $remove_from_ace
+cd $destination && sudo rm -r $remove_from_base $remove_from_ace
