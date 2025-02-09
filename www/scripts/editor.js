@@ -5,13 +5,12 @@ await init();
 
 // Initialize Ace Editor
 const editor = ace.edit("editor");
-editor.setTheme("ace/theme/monokai");
 
 // Additional options
 editor.setOptions({
-    fontSize: "14px",
-    showPrintMargin: true,
+    fontSize: 20,
     wrap: true,
+    theme: "ace/theme/cobalt",
 });
 
 document.getElementById('submitButton').addEventListener('click', () => {
