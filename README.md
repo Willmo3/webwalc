@@ -18,9 +18,8 @@ WebWalc evaluates whether the costs of transferring program data to WebAssembly'
 Currently, WebWalc is a very minimal calculator which could be done with a stack. Yikes! However, there are a couple of operations that I anticipate could greatly benefit a Rust implementation.
 In particular, extensive looping and repeated data access will add locality pressure which I suspect Rust may be better able to handle.
 
-Of note: frontends have already been written for walc in a web (webwalc.ts) and terminal based (walc-frontend) environment.
+Of note: because the Walc interpreter is published through Rust WebAssembly, a cli-frontend has also been constructed -- see walc-frontend!
 
 ## Associated Repositories:
 - walc-model: interpreter backend written in Rust. https://github.com/Willmo3/walc-model
-- WebWalc.ts: web-based interpreter frontend written in TypeScript. https://github.com/Willmo3/webwalc.ts
 - walc-frontend: cli-based interpreter frontend written in Rust. https://github.com/Willmo3/walc-frontend
