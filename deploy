@@ -4,6 +4,7 @@ destination="/var/www/html/webwalc"
 
 # Prepare frontend.
 cd www/lib && ./update
+cd ../..
 
 # Port files
 sudo cp -r www $destination
